@@ -17,9 +17,26 @@ const reducer = (state, action) => {
             }
             break;
         case 'REMOVE_FROM_DATALAYER':
+            // find the id, slice it out, then return the new state/data layer
+            let newBasket = [...state.dataLayer];
+            // check if item id is equivalent to action id
+            const index = state.dataLayer.findIndex((item) => item.id === action.id);
+            if(index >= 0) {
+                // item exists, remove it
+                newBasket.splice(index, 1);
+            }
+
+            return {
+                ...state, dataLayer:newBasket
+            }
             // logic from removing from data layer
             break;
-        // default state -- if none of the above, leave it to the state that was in
+            case 'REMOVE_ALL':
+                return {
+                    ...state, dataLayer:[]
+                }
+                break;
+            // default state -- if none of the above, leave it to the state that was in
         default:
             return state;
     }
