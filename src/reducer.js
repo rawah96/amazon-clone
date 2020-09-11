@@ -2,10 +2,11 @@ export const initialState = {
     dataLayer: [],
 }
 
+export const getBasketTotal = (dataLayer) => dataLayer? (dataLayer.reduce((amount, item) => item.price + amount, 0)) : null;
+
 // anything inside the data layer is a state,
 // and we manipulate the data layer with actions
 const reducer = (state, action) => {
-    console.log(action)
     // switch on an action type
     switch(action.type) {
         case 'ADD_TO_DATALAYER':
