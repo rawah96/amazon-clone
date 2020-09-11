@@ -1,7 +1,16 @@
+/*
+    make navbar stick where it is: 
+    position: sticky;
+    top:0; 
+    z-index: 100; // priority
+*/
 .navbar {
     background-color: #131921;
-    display: flex;
+    display: flex; 
     align-items: center;
+    position: sticky;
+    top:0;
+    z-index: 100;
 }
 
 .amazon-logo {
