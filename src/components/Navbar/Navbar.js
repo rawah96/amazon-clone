@@ -4,8 +4,13 @@ import amazon from './amazon.png';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
-
+import {useStateValue} from '../../StateProvider'
 function Navbar() {
+    // using the data layer
+    // dispatching makes us use the actions/logic in the reducer
+    //const [{dataLayer}, dispatch] = useStateValue();
+    // at this point we only want the basket
+    const [{dataLayer}] = useStateValue();
     return (
         <nav className="navbar">
             <Link to="/">
@@ -42,7 +47,10 @@ function Navbar() {
                     <div className="option-basket">
                         
                         <ShoppingBasketIcon />
-                        <span className="option2 basket-counter">0</span>
+                        <span className="option2 basket-counter">
+                            {/* using the data layer */}
+                            {dataLayer? dataLayer.length : null}
+                        </span>
                     </div>
                 </Link>
             </div>
