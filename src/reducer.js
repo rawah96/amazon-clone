@@ -1,5 +1,6 @@
 export const initialState = {
     dataLayer: [],
+    user: null,
 }
 
 export const getBasketTotal = (dataLayer) => dataLayer? (dataLayer.reduce((amount, item) => item.price + amount, 0)) : null;
@@ -9,6 +10,12 @@ export const getBasketTotal = (dataLayer) => dataLayer? (dataLayer.reduce((amoun
 const reducer = (state, action) => {
     // switch on an action type
     switch(action.type) {
+        case 'SET_USER': 
+            return {
+                ...state,
+                user: action.user
+            }
+            break;
         case 'ADD_TO_DATALAYER':
             // when we add to the data layer, put logic
             // return what the new data layer will look like

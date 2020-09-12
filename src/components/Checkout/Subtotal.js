@@ -3,16 +3,29 @@ import './Subtotal.css'
 import CurrencyFormat from 'react-currency-format';
 import {useStateValue} from '../../StateProvider' 
 import { getBasketTotal } from '../../reducer';
+import {useHistory} from 'react-router-dom';
 
 function Subtotal() {
-    const [{dataLayer}, dispatch] = useStateValue();
+    const [{dataLayer, user}, dispatch] = useStateValue();
+    const history = useHistory();
+
+    const handleClick = () => {
+        if(user) {
+            history.push("/payment")
+        } else {
+            history.push("/login");
+        }
+    }
+
     return (
         <div className="subtotal">
             <CurrencyFormat 
               renderText={(value) => (
                   <>
                     <p>
-                        Subtotal ({dataLayer.length} items): <string>
+                        Subtotal ({dataLayer.length} 
+                        {dataLayer.length > 1 ? ' items' : ' item'}
+                        ): <string>
                         {`$ ${value}`} {dataLayer.price}
                         </string></p>
                     <small className="subtotal-gift">
@@ -24,9 +37,12 @@ function Subtotal() {
               value={getBasketTotal(dataLayer)}
               displayType={"text"}
               thousandSeparator={true}
-              prefix={"$"}
+              /*prefix={"$"}*/
             />
-            <button className="subtotal-checkout">Proceed to checkout</button>
+            <button className="subtotal-checkout"
+            onClick={handleClick}
+            >Proceed to checkout</button>
+            {/* redirect to sign in if the user isn't signed in. */}
         </div>
     )
 }

@@ -5,12 +5,20 @@ import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useStateValue} from '../../StateProvider'
+import {auth} from '../../firebase';
+
 function Navbar() {
     // using the data layer
     // dispatching makes us use the actions/logic in the reducer
     //const [{dataLayer}, dispatch] = useStateValue();
     // at this point we only want the basket
-    const [{dataLayer}] = useStateValue();
+    const [{dataLayer, user}] = useStateValue();
+
+    const login = () => {
+        if(user) {
+            auth.signOut();
+        }
+    }
     return (
         <nav className="navbar">
             <Link to="/">
@@ -22,10 +30,12 @@ function Navbar() {
                 <SearchIcon className="navbar-search-icon"/>
             </div>
             <div className="nav-links">
-                <Link to="/login" className="link">
-                    <div className="nav-options">
-                        <span className="option1">hello</span>
-                        <span className="option2">Sign In</span>
+                <Link to={!user && "/login"} className="link">
+                    <div 
+                    onClick={login}
+                    className="nav-options">
+                        <span className="option1">Hello {user ? user.email: null}</span>
+                        <span className="option2">{user? (<h1>Sign out</h1>) : (<h1>Sign in</h1>)}</span>
                     </div>
                 </Link>
 

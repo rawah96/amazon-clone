@@ -7,7 +7,7 @@ import Subtotal from './Subtotal'
 function Checkout() {
     // pull in the data layer from the store
     // the dispatch is used when we wanna manipulate state/data layer
-    const [{dataLayer}] = useStateValue();
+    const [{dataLayer, user}] = useStateValue();
 
     return (
         <div className="checkout">
@@ -41,8 +41,9 @@ function Checkout() {
             </div>
             {dataLayer.length > 0 ? (
                 <div className="checkout-right">
-                <Subtotal />
-            </div>
+                    {/*user? <Subtotal /> : <h1>Sign in first</h1>*/}
+                    <Subtotal />
+                </div>
             ): null}
             
         </div>
