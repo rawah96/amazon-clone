@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/amazon-clone/static/css/main.10deb5ae.chunk.css",
+    "main.js": "/amazon-clone/static/js/main.4625715f.chunk.js",
+    "main.js.map": "/amazon-clone/static/js/main.4625715f.chunk.js.map",
+    "runtime-main.js": "/amazon-clone/static/js/runtime-main.1cf4aa72.js",
+    "runtime-main.js.map": "/amazon-clone/static/js/runtime-main.1cf4aa72.js.map",
+    "static/js/2.ee7ce646.chunk.js": "/amazon-clone/static/js/2.ee7ce646.chunk.js",
+    "static/js/2.ee7ce646.chunk.js.map": "/amazon-clone/static/js/2.ee7ce646.chunk.js.map",
+    "index.html": "/amazon-clone/index.html",
+    "precache-manifest.580e71f5bb6f67d5c770764c0519572b.js": "/amazon-clone/precache-manifest.580e71f5bb6f67d5c770764c0519572b.js",
+    "service-worker.js": "/amazon-clone/service-worker.js",
+    "static/css/main.10deb5ae.chunk.css.map": "/amazon-clone/static/css/main.10deb5ae.chunk.css.map",
+    "static/js/2.ee7ce646.chunk.js.LICENSE.txt": "/amazon-clone/static/js/2.ee7ce646.chunk.js.LICENSE.txt",
+    "static/media/amazon.png": "/amazon-clone/static/media/amazon.7451f65b.png",
+    "static/media/ast.jpg": "/amazon-clone/static/media/ast.c2c56ff1.jpg",
+    "static/media/astro3.jpg": "/amazon-clone/static/media/astro3.cb936b2b.jpg",
+    "static/media/mask.jpg": "/amazon-clone/static/media/mask.726f360b.jpg",
+    "static/media/short.jpg": "/amazon-clone/static/media/short.4141f1e4.jpg",
+    "static/media/short2.jpg": "/amazon-clone/static/media/short2.bae5b706.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cf4aa72.js",
+    "static/js/2.ee7ce646.chunk.js",
+    "static/css/main.10deb5ae.chunk.css",
+    "static/js/main.4625715f.chunk.js"
+  ]
+}
